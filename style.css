@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --panel: rgba(15, 28, 48, .82);
+  --text: #f4f7fb;
+  --muted: #9aabc2;
+  --accent: #65e6b5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(34, 124, 150, .22), transparent 42%),
+    radial-gradient(ellipse at 85% 80%, rgba(81, 76, 180, .23), transparent 40%),
+    var(--bg);
+}
+.clock-card {
+  width: min(720px, 100%);
+  text-align: center;
+  padding: clamp(30px, 7vw, 68px) 24px;
+  border: 1px solid rgba(160, 190, 220, .18);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: 0 28px 90px rgba(0,0,0,.35);
+  backdrop-filter: blur(18px);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  color: #d7e5f5;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #062019;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.eyebrow {
+  margin: 44px 0 12px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .28em;
+}
+.clock {
+  font-size: clamp(56px, 12vw, 104px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -.07em;
+  font-variant-numeric: tabular-nums;
+}
+.date {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: clamp(15px, 2.6vw, 19px);
+  font-weight: 500;
+}
+.timezone {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 36px;
+  padding: 11px 16px;
+  border: 1px solid rgba(160, 190, 220, .16);
+  border-radius: 999px;
+  color: #c1d0e2;
+  font-size: 13px;
+}
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+footer {
+  margin-top: 48px;
+  color: #6f829d;
+  font-size: 12px;
+  letter-spacing: .04em;
+}
+@media (max-width: 480px) {
+  .clock-card { border-radius: 22px; }
+  .eyebrow { margin-top: 36px; }
+  footer { margin-top: 36px; }
+}
